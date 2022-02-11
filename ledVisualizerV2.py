@@ -59,23 +59,25 @@ def main_function():
     while done == False:
         try:
             for event in pygame.event.get():
+                print(event)
+                print(event.type)
                 if event.type == pygame.QUIT:
                     done = True
-            #print(event)
             for msg in inport.iter_pending():
-                #print(msg)
-                n = msg.note
-                ref_note = get_ref_note(n)
-                if msg.type is 'note_on':                
-                    v = msg.velocity
-                    for i in range (STEPS):
-                        pixels[ref_note+i] = (R(v),G(v),B(v))
-                if msg.type is 'note_off':
-                    for i in range (STEPS):
-                        pixels[ref_note+i] = (0,0,0)
-                clock.tick(400)
+                print(msg)
+                if msg.type is 'note_on' or msg.type is 'note_off':
+                    n = msg.note
+                    ref_note = get_ref_note(n)
+                    if msg.type is 'note_on':                
+                        v = msg.velocity
+                        for i in range (STEPS):
+                            pixels[ref_note+i] = (R(v),G(v),B(v))
+                    if msg.type is 'note_off':
+                        for i in range (STEPS):
+                            pixels[ref_note+i] = (0,0,0)
+                    clock.tick(400)
         except AttributeError as error:
-                print("Error occured!")
+                print(error)
                 pass
 
 try:
