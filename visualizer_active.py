@@ -29,44 +29,31 @@ ERR_KEY_NUM = 35
 #right shift in LED length
 ERR_SHIFT = -0.2
 
-    
-def flashLed():
-    for i in range(5):
-        pixels.fill((5,0,0))
-        sleep(0.1)
-        pixels.fill((0,0,0))
-        sleep(0.1)
+pixels = neopixel.NeoPixel(board.D18, LED_ARRAY_COUNT)
+pygame.init()
 
-try:
-    pixels = neopixel.NeoPixel(board.D18, LED_ARRAY_COUNT)
-    pygame.init()    
-    RESOLUTION = ((LAST_LED - FIRST_LED)/KEYBOARD_LEN) - ERROR
-    STEPS = round(RESOLUTION)
-    pixels.fill((1,2,3))
-    sleep(1)
-    pixels.fill((0,0,0))
-    sleep(1)
-except:
-    print("INIT_ERR")
-    flashLed()
-    exit(1)
+RESOLUTION = ((LAST_LED - FIRST_LED)/KEYBOARD_LEN) - ERROR
+STEPS = round(RESOLUTION)
 
-try:
-    clock = pygame.time.Clock()
-    print(mido.get_input_names())
-    inport = mido.open_input('CASIO USB-MIDI MIDI 1')
-except:
-    print("KEYBOARD_ERR")
-    flashLed()
-    exit(1)
+#screen = pygame.display.set_mode(SIZE)
+#pygame.display.set_caption("Python MIDI Program : Tarun Labs")
+clock = pygame.time.Clock()
+print(mido.get_input_names())
+inport = mido.open_input('CASIO USB-MIDI MIDI 1')
+
+pixels.fill((1,2,3))
+sleep(1)
+pixels.fill((0,0,0))
+sleep(1)
+
 
 def get_ref_note(n):
     if(n-LOWEST_NOTE_VAL>ERR_KEY_NUM):
         return round((n-LOWEST_NOTE_VAL) * RESOLUTION + ERR_SHIFT) + FIRST_LED
     else:
         return round((n-LOWEST_NOTE_VAL) * RESOLUTION) + FIRST_LED
-
     
+
 def main_function():
     n1=0
     n2=0
@@ -111,17 +98,18 @@ def main_function():
                     n2=0
                     n3=0
         except AttributeError as error:
+                print(error)
                 pass
 
 try:
     print("Starting the main program...")
     main_function()
-except:
-    print("GENERAL_ERR")
-    flashLed()
+except AttributeError as error:
+    print("Error occured!")
     pygame.quit() 
-    exit(1)
+    pass
 pygame.quit()
 print("Bye!")
         
+
 
