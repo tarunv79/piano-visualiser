@@ -1,0 +1,48 @@
+Follow this tutorial - 
+https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/
+
+Preparation & Installation
+Before we install the Raspberry Pi library for the WS2812 LEDs, some preparations have to be made:
+
+The package sources are updated:
+sudo apt-get update
+We install the required packages (confirm with Y):
+sudo apt-get install gcc make build-essential python-dev git scons swig
+The audio output must be deactivated. For this we edit the file
+sudo nano /etc/modprobe.d/snd-blacklist.conf
+Here we add the following line:
+
+blacklist snd_bcm2835
+Then the file is saved by pressing CTRL + O and CTRL + X closes the editor.
+
+We also need to edit the configuration file:
+sudo nano /boot/config.txt
+Below are lines with the following content (with Ctrl + W you can search):
+
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+This bottom line is commented out with a hashtag # at the beginning of the line: #dtparam=audio=on
+
+We restart the system
+sudo reboot
+
+Now we can download the library.
+
+git clone https://github.com/jgarff/rpi_ws281x
+In this directory are on the one hand some C files included, which can be easily compiled. The example code for this is easy to understand. In order to use them in Python, we need to compile them:
+
+cd rpi_ws281x/
+sudo scons
+However, in this tutorial we are mainly interested in the Python variant and therefore switch to the Python folder:
+use below url  to clone
+https://github.com/rpi-ws281x/rpi-ws281x-python
+
+cd python
+Here we carry out the installation:
+
+sudo python3 setup.py build 
+sudo python3 setup.py install 
+sudo pip3 install adafruit-circuitpython-neopixel
+This will allow us to carry out a first test in the next step.
+Note- above steps to build and install is not required, just download and run program
+
