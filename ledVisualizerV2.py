@@ -55,6 +55,9 @@ def get_ref_note(n):
     
 
 def main_function():
+    n1=0
+    n2=0
+    n3=0
     done = False
     while done == False:
         try:
@@ -68,14 +71,32 @@ def main_function():
                 if msg.type is 'note_on' or msg.type is 'note_off':
                     n = msg.note
                     ref_note = get_ref_note(n)
-                    if msg.type is 'note_on':                
+                    if msg.type is 'note_on':
                         v = msg.velocity
                         for i in range (STEPS):
                             pixels[ref_note+i] = (R(v),G(v),B(v))
+                        if n is LOWEST_NOTE_VAL:
+                            n1 = LOWEST_NOTE_VAL
+                        elif n is HIGHEST_NOTE_VAL:
+                            n2 = HIGHEST_NOTE_VAL
+                        elif n is LOWEST_NOTE_VAL+1:
+                            n3 = LOWEST_NOTE_VAL +1
                     if msg.type is 'note_off':
                         for i in range (STEPS):
                             pixels[ref_note+i] = (0,0,0)
                     clock.tick(400)
+          
+            if n1 is LOWEST_NOTE_VAL and n2 is HIGHEST_NOTE_VAL and n3 is LOWEST_NOTE_VAL+1:
+                 pygame.quit()
+                 print("Exiting the program...")
+                 pixels.fill((1,3,2))
+                 sleep(1)
+                 pixels.fill((0,0,0))
+                 break
+            else:
+                    n1=0
+                    n2=0
+                    n3=0
         except AttributeError as error:
                 print(error)
                 pass
@@ -86,6 +107,7 @@ except AttributeError as error:
     print("Error occured!")
     pygame.quit() 
     pass
-pygame.quit()    
+pygame.quit()
+print("Bye!")
         
 
