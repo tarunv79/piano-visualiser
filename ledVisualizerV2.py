@@ -5,6 +5,14 @@ import neopixel
 from time import sleep
 
 
+def R(x):
+    return round(x/7)
+def G(x):
+    return 2
+def B(x):
+    return 3
+
+
 KEYBOARD_LEN = 61
 LOWEST_NOTE_VAL = 36
 HIGHEST_NOTE_VAL = 96
@@ -49,23 +57,26 @@ def get_ref_note(n):
 def main_function():
     done = False
     while done == False:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                done = True
-        #print(event)
-        for msg in inport.iter_pending():
-            #print(msg)
-            n = msg.note
-            ref_note = get_ref_note(n)
-            if msg.type is 'note_on':                
-                v = msg.velocity
-                for i in range (STEPS):
-                    pixels[ref_note+i] = (round(v/3),0,0)
-            if msg.type is 'note_off':
-                for i in range (STEPS):
-                    pixels[ref_note+i] = (0,0,0)
-            clock.tick(400)    
-
+        try:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    done = True
+            #print(event)
+            for msg in inport.iter_pending():
+                #print(msg)
+                n = msg.note
+                ref_note = get_ref_note(n)
+                if msg.type is 'note_on':                
+                    v = msg.velocity
+                    for i in range (STEPS):
+                        pixels[ref_note+i] = (R(v),G(v),B(v))
+                if msg.type is 'note_off':
+                    for i in range (STEPS):
+                        pixels[ref_note+i] = (0,0,0)
+                clock.tick(400)
+        except AttributeError as error:
+                print("Error occured!")
+                pass
 
 try:
     main_function()
