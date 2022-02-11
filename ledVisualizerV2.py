@@ -117,7 +117,7 @@ try:
     print("Starting the main program...")
     main_function()
 except:
-    print("GENERAL_ERR")
+    print("EXEC_ERR")
     flashLed()
     pygame.quit() 
     exit(1)
