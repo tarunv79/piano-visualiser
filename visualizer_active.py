@@ -6,11 +6,11 @@ from time import sleep
 
 
 def R(x):
-    return 127
+    return 0
 def G(x):
     return 0
 def B(x):
-    return 0
+    return 128
 
 
 KEYBOARD_LEN = 61
