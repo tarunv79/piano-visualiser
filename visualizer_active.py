@@ -6,7 +6,7 @@ from time import sleep
 
 
 def R(x):
-    return 128
+    return 127
 def G(x):
     return 0
 def B(x):
