@@ -21,6 +21,8 @@ ERROR = 0
 ERR_KEY_NUM = 35
 #right shift in LED length
 ERR_SHIFT = -0.2
+
+SPECIAL_MODE1_FLAG = 0
     
 def flashLed():
     for i in range(5):
@@ -70,7 +72,32 @@ def get_ref_note(n):
     else:
         return round((n-LOWEST_NOTE_VAL) * RESOLUTION) + FIRST_LED
 
-    
+
+
+def special_mode(m):
+    SPECIAL_MODE1_FLAG = 0
+    print("special model call!")
+    if m is 1:
+        print("special mode 1 ...")
+        if SPECIAL_MODE1_FLAG is 0:
+            print("Special Mode 1 Starting...")
+            SPECIAL_MODE1_FLAG = 1
+            i = 7
+            while i <= 125:
+                if i <= 46:
+                    pixels[i] = (10,3,0)
+                elif i > 46 and i <=85:
+                    pixels[i] = (7,7,7)
+                else:
+                    pixels[i] = (0,15,0)
+                i+=1
+
+def exit_special_mode():
+    print("Exiting Special Mode...")
+    SPECIAL_MODE1_FLAG = 0
+  
+  
+  
 def main_function():
     R=10
     G=10
@@ -81,6 +108,7 @@ def main_function():
     n3=0
     n4=0
     COLOR_MODE = False
+    SPECIAL_MODE=0
     done = False
     while done == False:
         try:
@@ -96,8 +124,12 @@ def main_function():
                     ref_note = get_ref_note(n)
                     if msg.type is 'note_on':
                         v = msg.velocity
-                        for i in range (STEPS):
-                            pixels[ref_note+i] = (R,G,B)
+                        if SPECIAL_MODE is 0:
+                            for i in range (STEPS):
+                                pixels[ref_note+i] = (R,G,B)
+                        else:
+                            special_mode(SPECIAL_MODE)
+                            
                         if n is LOWEST_NOTE_VAL:
                             n1 = LOWEST_NOTE_VAL
                         elif n is HIGHEST_NOTE_VAL:
@@ -121,16 +153,21 @@ def main_function():
                                 elif n is LOWEST_NOTE_VAL+7:
                                     B-=i
                                 elif n is LOWEST_NOTE_VAL+8:
-                                    i+=1
+                                    i+=1                                 
                                 elif n is LOWEST_NOTE_VAL+9:
                                     i-=1
+                                elif n is LOWEST_NOTE_VAL+12:
+                                    SPECIAL_MODE=0
+                                    exit_special_mode()
+                                elif n is LOWEST_NOTE_VAL+13:
+                                    SPECIAL_MODE = 1
                                 if R < 0 or G <0 or B < 0:
                                     blinkRed()
                             except:
                                 blinkRed()
                                 continue
                             
-                    if msg.type is 'note_off':
+                    if msg.type is 'note_off' and SPECIAL_MODE is 0:
                         for i in range (STEPS):
                             pixels[ref_note+i] = (0,0,0)
                     clock.tick(400)
@@ -161,6 +198,7 @@ def main_function():
                     n2=0
                     n3=0
                     n4=0
+                
         except AttributeError as error:
                 pass
 

@@ -1,5 +1,4 @@
 # Program to print flag colors on each note press
-
 import pygame
 import mido
 import board
@@ -112,7 +111,14 @@ def main_function():
                             
                     if msg.type is 'note_off':
                         pixels.fill((0,0,0))
-                        
+                    if n is LOWEST_NOTE_VAL:
+                        n1 = LOWEST_NOTE_VAL
+                    elif n is HIGHEST_NOTE_VAL:
+                        n2 = HIGHEST_NOTE_VAL
+                    elif n is LOWEST_NOTE_VAL+1:
+                        n3 = LOWEST_NOTE_VAL +1
+                    elif n is HIGHEST_NOTE_VAL-1:
+                        n4 = HIGHEST_NOTE_VAL-1    
                     #clock.tick(400)
                     
           
