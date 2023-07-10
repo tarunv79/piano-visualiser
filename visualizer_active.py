@@ -15,6 +15,9 @@ LED_ARRAY_COUNT = 133
 FIRST_LED = 6
 LAST_LED = 125
 
+LED_MAX = 255
+LED_MIN = 0
+
 #general error in calibration
 ERROR = 0
 #starting from key num = 1
@@ -73,6 +76,12 @@ def get_ref_note(n):
         return round((n-LOWEST_NOTE_VAL) * RESOLUTION) + FIRST_LED
 
 
+def Rx(x):
+    return x
+def Gx(x):
+    return x
+def Bx(x):
+    return x
 
 def special_mode(m):
     SPECIAL_MODE1_FLAG = 0
@@ -108,7 +117,9 @@ def main_function():
     n3=0
     n4=0
     COLOR_MODE = False
+    STATIC_MODE=1
     SPECIAL_MODE=0
+    DYNAMIC_MODE=0
     done = False
     while done == False:
         try:
@@ -124,9 +135,22 @@ def main_function():
                     ref_note = get_ref_note(n)
                     if msg.type is 'note_on':
                         v = msg.velocity
-                        if SPECIAL_MODE is 0:
+                        if STATIC_MODE is 1:
+                            print("sm")
                             for i in range (STEPS):
                                 pixels[ref_note+i] = (R,G,B)
+                        elif DYNAMIC_MODE is 1:
+                            print("dm1")
+                            for i in range (STEPS):
+                                pixels[ref_note+i] = (Rx(v),G,B)
+                        elif DYNAMIC_MODE  is 2:
+                            print("dm2")
+                            for i in range (STEPS):
+                                pixels[ref_note+i] = (R,Gx(v),B)
+                        elif DYNAMIC_MODE is 3:
+                            print("dm3")
+                            for i in range (STEPS):
+                                pixels[ref_note+i] = (R,G,Bx(v))        
                         else:
                             special_mode(SPECIAL_MODE)
                             
@@ -161,8 +185,34 @@ def main_function():
                                     exit_special_mode()
                                 elif n is LOWEST_NOTE_VAL+13:
                                     SPECIAL_MODE = 1
-                                if R < 0 or G <0 or B < 0:
+                                elif n is HIGHEST_NOTE_VAL-2:
+                                    print("Static Mode selected!")
+                                    STATIC_MODE = 1
+                                    DYNAMIC_MODE=0
+                                elif n is HIGHEST_NOTE_VAL-3:
+                                    print("dynamic mode 1 is selected!")
+                                    DYNAMIC_MODE = 1
+                                    STATIC_MODE=0
+                                elif n is HIGHEST_NOTE_VAL-4:
+                                    print("dynamic mode 2 is selected!")
+                                    DYNAMIC_MODE = 2
+                                    STATIC_MODE=0
+                                elif n is HIGHEST_NOTE_VAL-5:
+                                    print("dynamic mode 3 is selected!")
+                                    DYNAMIC_MODE = 3
+                                    STATIC_MODE=0
+                                if R < LED_MIN or G <LED_MIN or B < LED_MIN : 
+                                    print("resetting RGB values!")
+                                    R=LED_MAX
+                                    G=LED_MAX
+                                    B=LED_MAX
                                     blinkRed()
+                                elif R > LED_MAX or G > LED_MAX or B > LED_MAX :
+                                    print("resetting RGB values!")
+                                    R=LED_MIN
+                                    G=LED_MIN
+                                    B=LED_MIN
+                                    blinkRed()   
                             except:
                                 blinkRed()
                                 continue
