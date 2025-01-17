@@ -1,0 +1,322 @@
+note_on channel=0 note=36 velocity=68 time=0
+note_off channel=0 note=36 velocity=64 time=0
+note_on channel=0 note=42 velocity=73 time=0
+note_off channel=0 note=42 velocity=64 time=0
+note_on channel=0 note=36 velocity=26 time=0
+note_off channel=0 note=36 velocity=64 time=0
+note_on channel=0 note=36 velocity=110 time=0
+note_off channel=0 note=36 velocity=64 time=0
+control_change channel=0 control=0 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=32 value=0 time=0
+'Message' object has no attribute 'note'
+program_change channel=0 program=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=0 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=32 value=0 time=0
+'Message' object has no attribute 'note'
+program_change channel=1 program=49 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=0 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=32 value=0 time=0
+'Message' object has no attribute 'note'
+program_change channel=2 program=32 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=0 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=32 value=0 time=0
+'Message' object has no attribute 'note'
+program_change channel=3 program=50 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=0 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=32 value=0 time=0
+'Message' object has no attribute 'note'
+program_change channel=4 program=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=91 value=40 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+sysex data=(127,127,4,5,1,1,1,1,1,0,4) time=0
+'Message' object has no attribute 'note'
+sysex data=(127,127,4,5,1,1,1,1,2,0,2) time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=93 value=72 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=7 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=10 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=91 value=30 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=7 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=10 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=91 value=36 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=7 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=10 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=91 value=7 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=7 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=10 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=91 value=32 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=93 value=72 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=7 value=100 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=10 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=91 value=40 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=93 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=94 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=100 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=100 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=100 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=100 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=100 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=100 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=100 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=100 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=100 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=100 value=1 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=6 value=64 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=100 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=6 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=0 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=100 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=6 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=1 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=100 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=6 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=2 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=100 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=6 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=3 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=101 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=100 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=6 value=2 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=38 value=0 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=101 value=127 time=0
+'Message' object has no attribute 'note'
+control_change channel=4 control=100 value=127 time=0
+'Message' object has no attribute 'note'
+^CTraceback (most recent call last):
+  File "/usr/lib/python3.7/queue.py", line 167, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ledVisualizerV2.py", line 82, in <module>
+    main_function()
+  File "ledVisualizerV2.py", line 65, in main_function
+    for msg in inport.iter_pending():
+  File "/usr/local/lib/python3.7/dist-packages/mido/ports.py", line 175, in iter_pending
+    msg = self.poll()
+  File "/usr/local/lib/python3.7/dist-packages/mido/backends/rtmidi.py", line 146, in poll
+    return self._queue.poll()
+  File "/usr/local/lib/python3.7/dist-packages/mido/backends/_parser_queue.py", line 70, in poll
+    return self._queue.get_nowait()
+  File "/usr/lib/python3.7/queue.py", line 198, in get_nowait
+    return self.get(block=False)
+  File "/usr/lib/python3.7/queue.py", line 167, in get
+    raise Empty
+KeyboardInterrupt
+
